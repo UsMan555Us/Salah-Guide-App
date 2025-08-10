@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Prayer Mistakes Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jameel+Noori+Nastaleeq&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Urdu font for specific language */
+        body.urdu {
+            font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: #2E8B57;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Top Switcher Bar */
+        .top-switcher-bar {
+            background: #228B22;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .switcher-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .switcher-label {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .switcher-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid white;
+            padding: 6px 12px;
+            margin: 0 3px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 12px;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .switcher-btn:hover, .switcher-btn.active {
+            background: white;
+            color: #2E8B57;
+        }
+
+        /* Content */
+        .content {
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 5px solid #2E8B57;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .card-subtitle {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .card-icon {
+            font-size: 24px;
+            float: right;
+            margin-top: -5px;
+        }
+
+        /* Mistake Details */
+        .mistake-item {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .mistake-item:hover {
+            background: #e9ecef;
+        }
+
+        .mistake-question {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .arabic-text {
+            font-size: 16px;
+            color: #2E8B57;
+            text-align: right;
+            direction: rtl;
+            margin-bottom: 8px;
+        }
+
+        /* Ruling Display */
+        .ruling-container {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .ruling-question {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .madhab-badge {
+            background: #2E8B57;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .ruling-section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .ruling-text {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2E8B57;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .action-text {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #f39c12;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #2E8B57;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+            flex: 1;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .nav-btn:hover {
+            background: #228B22;
+        }
+
+        .nav-btn.secondary {
+            background: #6c757d;
+        }
+
+        .nav-btn.secondary:hover {
+            background: #545b62;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+        }
+
+        .bottom-nav-item {
+            text-align: center;
+            padding: 5px 10px;
+            cursor: pointer;
+            color: #2E8B57;
+            text-decoration: none;
+            font-size: 12px;
+            min-width: 60px;
+        }
+
+        .bottom-nav-item:hover {
+            background: rgba(46, 139, 87, 0.1);
+            border-radius: 8px;
+        }
+
+        .bottom-nav-icon {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Settings */
+        .settings-group {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .settings-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .option-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .option-btn {
+            background: white;
+            border: 2px solid #2E8B57;
+            color: #2E8B57;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .option-btn:hover, .option-btn.active {
+            background: #2E8B57;
+            color: white;
+        }
+
+        /* Terms */
+        .term-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 4px solid #2E8B57;
+        }
+
+        .term-arabic {
+            font-size: 18px;
+            color: #2E8B57;
+            text-align: right;
+            direction: rtl;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .term-english {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .term-meaning {
+            font-size: 14px;
+            color: #6c757d;
+            line-height: 1.5;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #999;
+            cursor: pointer;
+        }
+
+        .step {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: #2E8B57;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+
+        .step-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content {
+                padding: 15px;
+                padding-bottom: 80px;
+            }
+            
+            .title {
+                font-size: 20px;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+            }
+            
+            .nav-btn {
+                flex: none;
+            }
+
+            .top-switcher-bar {
+                flex-direction: column;
+                gap: 8px;
+                padding: 8px;
+            }
+
+            .switcher-group {
+                gap: 5px;
+            }
+
+            .switcher-btn {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+        }
+
+        /* RTL Support */
+        .rtl {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .rtl .card-icon {
+            float: left;
+        }
+
+        .rtl .step {
+            flex-direction: row-reverse;
+        }
+
+        .rtl .step-number {
+            margin-left: 15px;
+            margin-right: 0;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Utility */
+        .hidden { display: none !important; }
+        .text-center { text-align: center; }
+        .mb-20 { margin-bottom: 20px; }
+        .mt-20 { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title" id="appTitle">Prayer Mistakes Guide</h1>
+            <p class="subtitle" id="appSubtitle">Authentic Islamic Guidance for Prayer Corrections</p>
+        </div>
+
+        <!-- Top Switcher Bar (Language + Madhab) -->
+        <div class="top-switcher-bar">
+            <div class="switcher-group">
+                <span class="switcher-label" id="langLabel">Language:</span>
+                <button class="switcher-btn active" onclick="setLanguage('en')">EN</button>
+                <button class="switcher-btn" onclick="setLanguage('ur')">اردو</button>
+                <button class="switcher-btn" onclick="setLanguage('ar')">العربية</button>
+                <button class="switcher-btn" onclick="setLanguage('ps')">پښتو</button>
+            </div>
+            <div class="switcher-group">
+                <span class="switcher-label" id="madhabLabel">Madhab:</span>
+                <button class="switcher-btn active" onclick="setMadhab('hanafi')">حنفی</button>
+                <button class="switcher-btn" onclick="setMadhab('shafi')">شافعی</button>
+                <button class="switcher-btn" onclick="setMadhab('maliki')">مالکی</button>
+                <button class="switcher-btn" onclick="setMadhab('hanbali')">حنبلی</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Home Section -->
+            <div id="home" class="section active">
+                <!-- Categories -->
+                <div class="card" onclick="showSection('recitation')">
+                    <div class="card-icon">📖</div>
+                    <div class="card-title" id="cat1Title">Forgot Recitation</div>
+                    <div class="card-subtitle" id="cat1Subtitle">Sana, Surah, Tashahhud, Durood</div>
+                </div>
+
+                <div class="card" onclick="showSection('actions')">
+                    <div class="card-icon">🧍</div>
+                    <div class="card-title" id="cat2Title">Missed Physical Action</div>
+                    <div class="card-subtitle" id="cat2Subtitle">Ruku, Sujood, Standing, Sitting</div>
+                </div>
+
+                <div class="card" onclick="showSection('sequence')">
+                    <div class="card-icon">🔄</div>
+                    <div class="card-title" id="cat3Title">Wrong Sequence</div>
+                    <div class="card-subtitle" id="cat3Subtitle">Actions performed in wrong order</div>
+                </div>
+
+                <div class="card" onclick="showSection('extra')">
+                    <div class="card-icon">➕</div>
+                    <div class="card-title" id="cat4Title">Added Extra</div>
+                    <div class="card-subtitle" id="cat4Subtitle">Extra rakat, sujood, movements</div>
+                </div>
+
+                <div class="card" onclick="showSection('timing')">
+                    <div class="card-icon">⏰</div>
+                    <div class="card-title" id="cat5Title">Timing & Direction</div>
+                    <div class="card-subtitle" id="cat5Subtitle">Prayer time, Qibla issues</div>
+                </div>
+            </div>
+
+            <!-- Recitation Mistakes -->
+            <div id="recitation" class="section">
+                <h2 id="recitationTitle">Forgot Recitation</h2>
+                <p id="selectMistake">Select the specific mistake that occurred:</p>
+
+                <div class="mistake-item" onclick="showRuling('sana')">
+                    <div class="mistake-question" id="sanaQ">Did you forget to recite Sana (opening supplication)?</div>
+                    <div class="arabic-text" id="sanaA">هل نسيت قراءة الثناء (دعاء الاستفتاح)؟</div>
+                </div>
+
+                <div class="mistake-item" onclick="showRuling('surah')">
+                    <div class="mistake-question" id="surahQ">Did you forget to recite Surah after Fatiha?</div>
+                    <div class="arabic-text" id="surahA">هل نسيت قراءة السورة بعد الفاتحة؟</div>
+                </div>
+
+                <div class="mistake-item" onclick="showRuling('fatiha')">
+                    <div class="mistake-question" id="fatihaQ">Did you forget to recite Fatiha in any rakat?</div>
+                    <div class="arabic-text" id="fatihaA">هل نسيت قراءة الفاتحة في أي ركعة؟</div>
+                </div>
+
+                <div class="mistake-item" onclick="showRuling('tashahhud')">
+                    <div class="mistake-question" id="tashahhudQ">Did you forget the first Tashahhud?</div>
+                    <div class="arabic-text" id="tashahhudA">هل نسيت التشهد الأول؟</div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn secondary" onclick="showSection('home')" id="backToCategories">← Back to Categories</button>
+                </div>
+            </div>
+
+            <!-- Actions Mistakes -->
+            <div id="actions" class="section">
+                <h2 id="actionsTitle">Missed Physical Action</h2>
+                <p id="selectAction">Select the specific action you missed:</p>
+
+                <div class="mistake-item" onclick="showRuling('ruku')">
+                    <div class="mistake-question" id="rukuQ">Did you forget to perform Ruku?</div>
+                    <div class="arabic-text" id="rukuA">هل نسيت أداء الركوع؟</div>
+                </div>
+
+                <div class="mistake-item" onclick="showRuling('sujood')">
+                    <div class="mistake-question" id="sujoodQ">Did you forget one Sujood?</div>
+                    <div class="arabic-text" id="sujoodA">هل نسيت أداء سجدة واحدة؟</div>
+                </div>
+
+                <div class="mistake-item" onclick="showRuling('standing')">
+                    <div class="mistake-question" id="standingQ">Did you forget to stand after Ruku?</div>
+                    <div class="arabic-text" id="standingA">هل نسيت الوقوف بعد الركوع؟</div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn secondary" onclick="showSection('home')" id="backToCategories2">← Back to Categories</button>
+                </div>
+            </div>
+
+            <!-- Other sections -->
+            <div id="sequence" class="section">
+                <h2 id="sequenceTitle">Wrong Sequence</h2>
+                <div class="mistake-item" onclick="showRuling('wrong_order')">
+                    <div class="mistake-question" id="wrongOrderQ">Did you perform actions in wrong order?</div>
+                    <div class="arabic-text">هل أديت أفعال الصلاة بترتيب خاطئ؟</div>
+                </div>
+                <div class="nav-buttons">
+                    <button class="nav-btn secondary" onclick="showSection('home')" id="backToCategories3">← Back to Categories</button>
+                </div>
+            </div>
+
+            <div id="extra" class="section">
+                <h2 id="extraTitle">Added Extra</h2>
+                <div class="mistake-item" onclick="showRuling('extra_rakat')">
+                    <div class="mistake-question" id="extraRakatQ">Did you pray an extra rakat by mistake?</div>
+                    <div class="arabic-text">هل صليت ركعة زائدة بالخطأ؟</div>
+                </div>
+                <div class="nav-buttons">
+                    <button class="nav-btn secondary" onclick="showSection('home')" id="backToCategories4">← Back to Categories</button>
+                </div>
+            </div>
+
+            <div id="timing" class="section">
+                <h2 id="timingTitle">Timing & Direction</h2>
+                <div class="mistake-item" onclick="showRuling('wrong_qibla')">
+                    <div class="mistake-question" id="wrongQiblaQ">Did you pray facing wrong direction?</div>
+                    <div class="arabic-text">هل صليت في اتجاه خاطئ؟</div>
+                </div>
+                <div class="nav-buttons">
+                    <button class="nav-btn secondary" onclick="showSection('home')" id="backToCategories5">← Back to Categories</button>
+                </div>
+            </div>
+
+            <!-- Ruling Display -->
+            <div id="ruling" class="section">
+                <div class="ruling-container" id="rulingContainer">
+                    <div class="ruling-question" id="rulingQuestion"></div>
+                    <div class="arabic-text" id="rulingArabic"></div>
+                    
+                    <div class="madhab-badge" id="rulingMadhab">Hanafi Madhab</div>
+                    
+                    <div class="ruling-section">
+                        <div class="section-title" id="rulingLabel">Ruling:</div>
+                        <div class="ruling-text" id="rulingText"></div>
+                    </div>
+                    
+                    <div class="ruling-section">
+                        <div class="section-title" id="actionLabel">Action Required:</div>
+                        <div class="action-text" id="actionText"></div>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn" onclick="showSajdaSahw()" id="sajdaSahwBtn">📖 How to do Sajda Sahw?</button>
+                    <button class="nav-btn secondary" onclick="goBack()" id="backBtn">← Back</button>
+                    <button class="nav-btn secondary" onclick="showSection('home')" id="homeBtn">🏠 Home</button>
+                </div>
+            </div>
+
+            <!-- Settings -->
+            <div id="settings" class="section">
+                <div class="settings-group">
+                    <div class="settings-title" id="languageTitle">Language</div>
+                    <div class="option-group">
+                        <button class="option-btn active" onclick="setLanguage('en')">English</button>
+                        <button class="option-btn" onclick="setLanguage('ur')">اردو</button>
+                        <button class="option-btn" onclick="setLanguage('ar')">العربية</button>
+                        <button class="option-btn" onclick="setLanguage('ps')">پښتو</button>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <div class="settings-title" id="madhabTitle">Madhab (School of Thought)</div>
+                    <div class="option-group">
+                        <button class="option-btn active" onclick="setMadhab('hanafi')">Hanafi</button>
+                        <button class="option-btn" onclick="setMadhab('shafi')">Shafi</button>
+                        <button class="option-btn" onclick="setMadhab('maliki')">Maliki</button>
+                        <button class="option-btn" onclick="setMadhab('hanbali')">Hanbali</button>
+                    </div>
+                    <p id="madhabDescription">Most common in South Asia, Turkey, and Central Asia</p>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn secondary" onclick="showSection('home')" id="backToHome">← Back to Home</button>
+                </div>
+            </div>
+
+            <!-- About -->
+            <div id="about" class="section">
+                <div class="settings-group">
+                    <div class="settings-title" id="aboutTitle">About This App</div>
+                    <p id="aboutDescription">This app provides authentic Islamic guidance for common prayer mistakes based on the four major Sunni madhabs. Each ruling is derived from classical Islamic jurisprudence.</p>
+                    <br>
+                    <div style="background: #fef2f2; padding: 15px; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                        <p id="disclaimer">These rulings are based on established Sunni fiqh principles. For complex situations or personal circumstances, please consult a qualified Islamic scholar.</p>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <div class="settings-title" id="termsTitle">Key Islamic Terms</div>
+                    
+                    <div class="term-item">
+                        <div class="term-arabic">سجدة السهو</div>
+                        <div class="term-english" id="term1Name">Sajda Sahw</div>
+                        <div class="term-meaning" id="term1Meaning">Prostration of forgetfulness performed to correct prayer mistakes</div>
+                    </div>
+
+                    <div class="term-item">
+                        <div class="term-arabic">الثناء</div>
+                        <div class="term-english" id="term2Name">Sana (Thana)</div>
+                        <div class="term-meaning" id="term2Meaning">Opening supplication recited after Takbeer ul-Ihram</div>
+                    </div>
+
+                    <div class="term-item">
+                        <div class="term-arabic">الفاتحة</div>
+                        <div class="term-english" id="term3Name">Fatiha</div>
+                        <div class="term-meaning" id="term3Meaning">The opening chapter of Quran, recited in every rakat</div>
+                    </div>
+
+                    <div class="term-item">
+                        <div class="term-arabic">الركوع</div>
+                        <div class="term-english" id="term4Name">Ruku</div>
+                        <div class="term-meaning" id="term4Meaning">Bowing position with hands on knees</div>
+                    </div>
+
+                    <div class="term-item">
+                        <div class="term-arabic">السجود</div>
+                        <div class="term-english" id="term5Name">Sujood</div>
+                        <div class="term-meaning" id="term5Meaning">Prostration with forehead touching ground</div>
+                    </div>
+
+                    <div class="term-item">
+                        <div class="term-arabic">التشهد</div>
+                        <div class="term-english" id="term6Name">Tashahhud</div>
+                        <div class="term-meaning" id="term6Meaning">Sitting recitation including Shahada</div>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn secondary" onclick="showSection('home')" id="backToHome2">← Back to Home</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="#" class="bottom-nav-item" onclick="showSection('home')">
+                <span class="bottom-nav-icon">🏠</span>
+                <span id="navHome">Home</span>
+            </a>
+            <a href="#" class="bottom-nav-item" onclick="showSection('settings')">
+                <span class="bottom-nav-icon">⚙️</span>
+                <span id="navSettings">Settings</span>
+            </a>
+            <a href="#" class="bottom-nav-item" onclick="showSection('about')">
+                <span class="bottom-nav-icon">ℹ️</span>
+                <span id="navAbout">About</span>
+            </a>
+            <a href="#" class="bottom-nav-item" onclick="showSajdaSahw()">
+                <span class="bottom-nav-icon">📖</span>
+                <span id="navGuide">Guide</span>
+            </a>
+        </div>
+
+        <!-- Sajda Sahw Modal -->
+        <div id="sajdaModal" class="modal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeSajdaModal()">&times;</button>
+                <h3 class="modal-title" id="modalTitle">How to Perform Sajda Sahw</h3>
+                
+                <div id="sajdaSteps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-text" id="step1">After completing your prayer, remain sitting and recite "Allahu Akbar"</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-text" id="step2">Go into prostration (sujood) and recite "Subhana Rabbiyal A'la" 3 times</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-text" id="step3">Sit up while saying "Allahu Akbar"</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-text" id="step4">Go into prostration again saying "Allahu Akbar" and recite "Subhana Rabbiyal A'la" 3 times</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-text" id="step5">Sit up and recite the complete Tashahhud and Durood</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-text" id="step6">Complete with Salam to both sides</div>
+                    </div>
+                </div>
+                
+                <div style="background: #e8f5e8; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                    <p style="font-size: 14px; color: #2c3e50;" id="sajdaNote">Note: The method may vary slightly between madhabs. This is the general Hanafi method.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global Variables
+        let currentLanguage = 'en';
+        let currentMadhab = 'hanafi';
+        let previousSection = 'home';
+
+        // Language Translations
+        const translations = {
+            en: {
+                appTitle: "Prayer Mistakes Guide",
+                appSubtitle: "Authentic Islamic Guidance for Prayer Corrections",
+                langLabel: "Language:",
+                madhabLabel: "Madhab:",
+                
+                // Categories
+                cat1Title: "Forgot Recitation",
+                cat1Subtitle: "Sana, Surah, Tashahhud, Durood",
+                cat2Title: "Missed Physical Action", 
+                cat2Subtitle: "Ruku, Sujood, Standing, Sitting",
+                cat3Title: "Wrong Sequence",
+                cat3Subtitle: "Actions performed in wrong order",
+                cat4Title: "Added Extra",
+                cat4Subtitle: "Extra rakat, sujood, movements",
+                cat5Title: "Timing & Direction",
+                cat5Subtitle: "Prayer time, Qibla issues",
+                
+                // Section Titles
+                recitationTitle: "Forgot Recitation",
+                actionsTitle: "Missed Physical Action",
+                sequenceTitle: "Wrong Sequence", 
+                extraTitle: "Added Extra",
+                timingTitle: "Timing & Direction",
+                
+                // Questions
+                selectMistake: "Select the specific mistake that occurred:",
+                selectAction: "Select the specific action you missed:",
+                sanaQ: "Did you forget to recite Sana (opening supplication)?",
+                surahQ: "Did you forget to recite Surah after Fatiha?",
+                fatihaQ: "Did you forget to recite Fatiha in any rakat?",
+                tashahhudQ: "Did you forget the first Tashahhud?",
+                rukuQ: "Did you forget to perform Ruku?",
+                sujoodQ: "Did you forget one Sujood?",
+                standingQ: "Did you forget to stand after Ruku?",
+                wrongOrderQ: "Did you perform actions in wrong order?",
+                extraRakatQ: "Did you pray an extra rakat by mistake?",
+                wrongQiblaQ: "Did you pray facing wrong direction?",
+                
+                // Navigation
+                backToCategories: "← Back to Categories",
+                backToCategories2: "← Back to Categories",
+                backToCategories3: "← Back to Categories", 
+                backToCategories4: "← Back to Categories",
+                backToCategories5: "← Back to Categories",
+                sajdaSahwBtn: "📖 How to do Sajda Sahw?",
+                backBtn: "← Back",
+                homeBtn: "🏠 Home",
+                backToHome: "← Back to Home",
+                backToHome2: "← Back to Home",
+                
+                // Bottom Nav
+                navHome: "Home",
+                navSettings: "Settings", 
+                navAbout: "About",
+                navGuide: "Guide",
+                
+                // Settings
+                languageTitle: "Language",
+                madhabTitle: "Madhab (School of Thought)",
+                madhabDescription: "Most common in South Asia, Turkey, and Central Asia",
+                
+                // About
+                aboutTitle: "About This App",
+                aboutDescription: "This app provides authentic Islamic guidance for common prayer mistakes based on the four major Sunni madhabs. Each ruling is derived from classical Islamic jurisprudence.",
+                disclaimer: "These rulings are based on established Sunni fiqh principles. For complex situations or personal circumstances, please consult a qualified Islamic scholar.",
+                termsTitle: "Key Islamic Terms",
+                
+                // Terms
+                term1Name: "Sajda Sahw",
+                term1Meaning: "Prostration of forgetfulness performed to correct prayer mistakes",
+                term2Name: "Sana (Thana)",
+                term2Meaning: "Opening supplication recited after Takbeer ul-Ihram",
+                term3Name: "Fatiha", 
+                term3Meaning: "The opening chapter of Quran, recited in every rakat",
+                term4Name: "Ruku",
+                term4Meaning: "Bowing position with hands on knees",
+                term5Name: "Sujood",
+                term5Meaning: "Prostration with forehead touching ground",
+                term6Name: "Tashahhud",
+                term6Meaning: "Sitting recitation including Shahada",
+                
+                // Ruling Labels
+                rulingLabel: "Ruling:",
+                actionLabel: "Action Required:",
+                
+                // Modal
+                modalTitle: "How to Perform Sajda Sahw",
+                step1: "After completing your prayer, remain sitting and recite 'Allahu Akbar'",
+                step2: "Go into prostration (sujood) and recite 'Subhana Rabbiyal A'la' 3 times",
+                step3: "Sit up while saying 'Allahu Akbar'",
+                step4: "Go into prostration again saying 'Allahu Akbar' and recite 'Subhana Rabbiyal A'la' 3 times",
+                step5: "Sit up and recite the complete Tashahhud and Durood",
+                step6: "Complete with Salam to both sides",
+                sajdaNote: "Note: The method may vary slightly between madhabs. This is the general Hanafi method."
+            },
+            
+            ur: {
+                appTitle: "نماز کی غلطیوں کا رہنما",
+                appSubtitle: "نماز میں اصلاح کے لیے صحیح اسلامی رہنمائی",
+                langLabel: "زبان:",
+                madhabLabel: "مذہب:",
+                
+                // Categories
+                cat1Title: "قراءت بھول گئے",
+                cat1Subtitle: "ثنا، سورہ، تشہد، درود",
+                cat2Title: "جسمانی عمل رہ گیا",
+                cat2Subtitle: "رکوع، سجدہ، کھڑے ہونا، بیٹھنا", 
+                cat3Title: "غلط ترتیب",
+                cat3Subtitle: "اعمال غلط ترتیب میں",
+                cat4Title: "اضافی کام",
+                cat4Subtitle: "زیادہ رکعت، سجدہ، حرکات",
+                cat5Title: "وقت اور سمت",
+                cat5Subtitle: "نماز کا وقت، قبلہ کے مسائل",
+                
+                // Section Titles  
+                recitationTitle: "قراءت بھول گئے",
+                actionsTitle: "جسمانی عمل رہ گیا",
+                sequenceTitle: "غلط ترتیب",
+                extraTitle: "اضافی کام", 
+                timingTitle: "وقت اور سمت",
+                
+                // Questions
+                selectMistake: "جو غلطی ہوئی ہے اسے منتخب کریں:",
+                selectAction: "جو عمل رہ گیا ہے اسے منتخب کریں:",
+                sanaQ: "کیا آپ ثنا (ابتدائی دعا) پڑھنا بھول گئے؟",
+                surahQ: "کیا آپ فاتحہ کے بعد سورہ پڑھنا بھول گئے؟",
+                fatihaQ: "کیا آپ کسی رکعت میں فاتحہ پڑھنا بھول گئے؟",
+                tashahhudQ: "کیا آپ پہلا تشہد بھول گئے؟",
+                rukuQ: "کیا آپ رکوع کرنا بھول گئے؟",
+                sujoodQ: "کیا آپ ایک سجدہ بھول گئے؟",
+                standingQ: "کیا آپ رکوع کے بعد کھڑے ہونا بھول گئے؟",
+                wrongOrderQ: "کیا آپ نے اعمال غلط ترتیب میں کیے؟",
+                extraRakatQ: "کیا آپ نے غلطی سے اضافی رکعت پڑھی؟",
+                wrongQiblaQ: "کیا آپ نے غلط سمت میں نماز پڑھی؟",
+                
+                // Navigation
+                backToCategories: "← اقسام پر واپس",
+                backToCategories2: "← اقسام پر واپس", 
+                backToCategories3: "← اقسام پر واپس",
+                backToCategories4: "← اقسام پر واپس",
+                backToCategories5: "← اقسام پر واپس",
+                sajdaSahwBtn: "📖 سجدہ سہو کیسے کریں؟",
+                backBtn: "← واپس",
+                homeBtn: "🏠 ہوم",
+                backToHome: "← ہوم پر واپس",
+                backToHome2: "← ہوم پر واپس",
+                
+                // Bottom Nav
+                navHome: "ہوم",
+                navSettings: "ترتیبات",
+                navAbout: "تعارف", 
+                navGuide: "گائیڈ",
+                
+                // Settings
+                languageTitle: "زبان",
+                madhabTitle: "مذہب (فقہی مسلک)",
+                madhabDescription: "جنوبی ایشیا، ترکی اور وسطی ایشیا میں عام",
+                
+                // About
+                aboutTitle: "اس ایپ کے بارے میں",
+                aboutDescription: "یہ ایپ چاروں بڑے سنی مذاہب کی بنیاد پر نماز کی عام غلطیوں کے لیے صحیح اسلامی رہنمائی فراہم کرتا ہے۔ ہر حکم کلاسیکی اسلامی فقہ سے مشتق ہے۔",
+                disclaimer: "یہ احکام مستند سنی فقہ کے اصولوں پر مبنی ہیں۔ پیچیدہ حالات یا ذاتی معاملات کے لیے کسی اہل عالم سے رابطہ کریں۔",
+                termsTitle: "اہم اسلامی اصطلاحات",
+                
+                // Terms
+                term1Name: "سجدہ سہو",
+                term1Meaning: "نماز کی غلطیوں کو درست کرنے کے لیے کیا جانے والا سجدہ",
+                term2Name: "ثنا",
+                term2Meaning: "تکبیر تحریمہ کے بعد پڑھی جانے والی ابتدائی دعا",
+                term3Name: "فاتحہ",
+                term3Meaning: "قرآن کا پہلا باب جو ہر رکعت میں پڑھا جاتا ہے",
+                term4Name: "رکوع",
+                term4Meaning: "گھٹنوں پر ہاتھ رکھ کر جھکنے کی حالت",
+                term5Name: "سجدہ", 
+                term5Meaning: "پیشانی زمین پر لگا کر کیا جانے والا سجدہ",
+                term6Name: "تشہد",
+                term6Meaning: "بیٹھ کر پڑھی جانے والی دعا جس میں کلمہ شہادت شامل ہے",
+                
+                // Ruling Labels
+                rulingLabel: "حکم:",
+                actionLabel: "مطلوبہ عمل:",
+                
+                // Modal
+                modalTitle: "سجدہ سہو کا طریقہ",
+                step1: "نماز مکمل کرنے کے بعد بیٹھے رہیں اور 'اللہ اکبر' کہیں",
+                step2: "سجدے میں جائیں اور 'سبحان ربی الاعلیٰ' تین بار پڑھیں",
+                step3: "'اللہ اکبر' کہتے ہوئے بیٹھیں",
+                step4: "'اللہ اکبر' کہتے ہوئے دوبارہ سجدے میں جائیں اور 'سبحان ربی الاعلیٰ' تین بار پڑھیں",
+                step5: "بیٹھ کر مکمل تشہد اور درود پڑھیں",
+                step6: "دونوں طرف سلام پھیر کر مکمل کریں",
+                sajdaNote: "نوٹ: طریقہ کار مختلف مذاہب میں تھوڑا مختلف ہو سکتا ہے۔ یہ عام حنفی طریقہ ہے۔"
+            },
+            
+            ar: {
+                appTitle: "دليل أخطاء الصلاة",
+                appSubtitle: "إرشاد إسلامي صحيح لتصحيح أخطاء الصلاة",
+                langLabel: "اللغة:",
+                madhabLabel: "المذهب:",
+                
+                // Categories
+                cat1Title: "نسيان القراءة",
+                cat1Subtitle: "الثناء، السورة، التشهد، الصلاة على النبي",
+                cat2Title: "فوت الأعمال الجسدية",
+                cat2Subtitle: "الركوع، السجود، القيام، الجلوس",
+                cat3Title: "الترتيب الخاطئ", 
+                cat3Subtitle: "الأعمال بترتيب خاطئ",
+                cat4Title: "الزيادة",
+                cat4Subtitle: "ركعة زائدة، سجدة، حركات",
+                cat5Title: "الوقت والاتجاه",
+                cat5Subtitle: "وقت الصلاة، مسائل القبلة",
+                
+                // Section Titles
+                recitationTitle: "نسيان القراءة",
+                actionsTitle: "فوت الأعمال الجسدية",
+                sequenceTitle: "الترتيب الخاطئ",
+                extraTitle: "الزيادة",
+                timingTitle: "الوقت والاتجاه",
+                
+                // Questions
+                selectMistake: "اختر الخطأ المحدد الذي حدث:",
+                selectAction: "اختر العمل المحدد الذي فاتك:",
+                sanaQ: "هل نسيت قراءة الثناء (دعاء الاستفتاح)؟",
+                surahQ: "هل نسيت قراءة السورة بعد الفاتحة؟",
+                fatihaQ: "هل نسيت قراءة الفاتحة في أي ركعة؟",
+                tashahhudQ: "هل نسيت التشهد الأول؟",
+                rukuQ: "هل نسيت أداء الركوع؟",
+                sujoodQ: "هل نسيت أداء سجدة واحدة؟",
+                standingQ: "هل نسيت الوقوف بعد الركوع؟",
+                wrongOrderQ: "هل أديت أفعال الصلاة بترتيب خاطئ؟",
+                extraRakatQ: "هل صليت ركعة زائدة بالخطأ؟",
+                wrongQiblaQ: "هل صليت في اتجاه خاطئ؟",
+                
+                // Navigation
+                backToCategories: "← العودة للأقسام",
+                backToCategories2: "← العودة للأقسام",
+                backToCategories3: "← العودة للأقسام", 
+                backToCategories4: "← العودة للأقسام",
+                backToCategories5: "← العودة للأقسام",
+                sajdaSahwBtn: "📖 كيفية أداء سجدة السهو؟",
+                backBtn: "← رجوع",
+                homeBtn: "🏠 الرئيسية",
+                backToHome: "← العودة للرئيسية",
+                backToHome2: "← العودة للرئيسية",
+                
+                // Bottom Nav
+                navHome: "الرئيسية",
+                navSettings: "الإعدادات",
+                navAbout: "حول",
+                navGuide: "الدليل",
+                
+                // Settings  
+                languageTitle: "اللغة",
+                madhabTitle: "المذهب (المدرسة الفقهية)",
+                madhabDescription: "الأكثر شيوعاً في جنوب آسيا وتركيا وآسيا الوسطى",
+                
+                // About
+                aboutTitle: "حول هذا التطبيق",
+                aboutDescription: "يوفر هذا التطبيق إرشادات إسلامية صحيحة لأخطاء الصلاة الشائعة بناءً على المذاهب السنية الأربعة الرئيسية. كل حكم مشتق من الفقه الإسلامي الكلاسيكي.",
+                disclaimer: "هذه الأحكام مبنية على مبادئ الفقه السني الراسخة. للحالات المعقدة أو الظروف الشخصية، يرجى استشارة عالم مؤهل.",
+                termsTitle: "المصطلحات الإسلامية الرئيسية",
+                
+                // Terms
+                term1Name: "سجدة السهو",
+                term1Meaning: "سجدة تؤدى لتصحيح أخطاء الصلاة",
+                term2Name: "الثناء",
+                term2Meaning: "دعاء الاستفتاح يقرأ بعد تكبيرة الإحرام",
+                term3Name: "الفاتحة",
+                term3Meaning: "السورة الأولى من القرآن تقرأ في كل ركعة",
+                term4Name: "الركوع",
+                term4Meaning: "وضعية الانحناء مع وضع اليدين على الركبتين",
+                term5Name: "السجود",
+                term5Meaning: "وضعية السجدة مع لمس الجبهة للأرض",
+                term6Name: "التشهد",
+                term6Meaning: "القراءة في وضعية الجلوس تتضمن الشهادة",
+                
+                // Ruling Labels
+                rulingLabel: "الحكم:",
+                actionLabel: "العمل المطلوب:",
+                
+                // Modal
+                modalTitle: "كيفية أداء سجدة السهو",
+                step1: "بعد إتمام الصلاة، ابق جالساً واقرأ 'الله أكبر'",
+                step2: "اسجد واقرأ 'سبحان ربي الأعلى' ثلاث مرات",
+                step3: "اجلس قائلاً 'الله أكبر'",
+                step4: "اسجد مرة أخرى قائلاً 'الله أكبر' واقرأ 'سبحان ربي الأعلى' ثلاث مرات",
+                step5: "اجلس واقرأ التشهد والصلاة على النبي كاملين",
+                step6: "أكمل بالسلام على الجانبين",
+                sajdaNote: "ملاحظة: قد تختلف الطريقة قليلاً بين المذاهب. هذه الطريقة الحنفية العامة."
+            },
+            
+            ps: {
+                appTitle: "د لمانځه د تېروتنو لارښود",
+                appSubtitle: "د لمانځه د سمون لپاره صحیح اسلامي لارښوونه",
+                langLabel: "ژبه:",
+                madhabLabel: "مذهب:",
+                
+                // Categories  
+                cat1Title: "لوستل هېر شو",
+                cat1Subtitle: "ثنا، سورت، تشهد، درود",
+                cat2Title: "فزیکي عمل پاتې شو",
+                cat2Subtitle: "رکوع، سجده، ودرېدل، کشینول",
+                cat3Title: "غلط ترتیب", 
+                cat3Subtitle: "اعمال په غلط ترتیب سره",
+                cat4Title: "زیاته کار",
+                cat4Subtitle: "زیات رکعت، سجده، حرکات",
+                cat5Title: "وخت او لور",
+                cat5Subtitle: "د لمانځه وخت، د قبلې ستونزې",
+                
+                // Section Titles
+                recitationTitle: "لوستل هېر شو",
+                actionsTitle: "فزیکي عمل پاتې شو", 
+                sequenceTitle: "غلط ترتیب",
+                extraTitle: "زیاته کار",
+                timingTitle: "وخت او لور",
+                
+                // Questions
+                selectMistake: "هغه ټاکلې تېروتنه غوره کړئ چې پیښه شوې:",
+                selectAction: "هغه ټاکلی عمل غوره کړئ چې دې ورک کړی:",
+                sanaQ: "ایا تاسو د ثنا (د پیل دعا) لوستل هېر کړل؟",
+                surahQ: "ایا تاسو د فاتحې وروسته سورت لوستل هېر کړل؟",
+                fatihaQ: "ایا تاسو په کوم رکعت کې فاتحه لوستل هېر کړل؟",
+                tashahhudQ: "ایا تاسو لومړی تشهد هېر کړ؟",
+                rukuQ: "ایا تاسو رکوع کول هېر کړل؟",
+                sujoodQ: "ایا تاسو یوه سجده هېره کړه؟",
+                standingQ: "ایا تاسو د رکوع وروسته ودرېدل هېر کړل؟",
+                wrongOrderQ: "ایا تاسو اعمال په غلط ترتیب سره وکړل؟",
+                extraRakatQ: "ایا تاسو په تېروتنه سره زیات رکعت ولوست؟",
+                wrongQiblaQ: "ایا تاسو په غلط لور کې لمونځ وکړ؟",
+                
+                // Navigation
+                backToCategories: "← ډولونو ته بیرته",
+                backToCategories2: "← ډولونو ته بیرته",
+                backToCategories3: "← ډولونو ته بیرته",
+                backToCategories4: "← ډولونو ته بیرته", 
+                backToCategories5: "← ډولونو ته بیرته",
+                sajdaSahwBtn: "📖 سجده سهو څنګه وکړو؟",
+                backBtn: "← بیرته",
+                homeBtn: "🏠 کور",
+                backToHome: "← کور ته بیرته",
+                backToHome2: "← کور ته بیرته",
+                
+                // Bottom Nav
+                navHome: "کور",
+                navSettings: "تنظیمات",
+                navAbout: "پیژندنه",
+                navGuide: "لارښود",
+                
+                // Settings
+                languageTitle: "ژبه",
+                madhabTitle: "مذهب (فقهي ښوونځی)",
+                madhabDescription: "په سویلي آسیا، ترکیه او منځني آسیا کې عام",
+                
+                // About
+                aboutTitle: "د دغه اپلیکیشن په اړه", 
+                aboutDescription: "دا اپلیکیشن د څلورو لویو سني مذهبونو پر بنسټ د لمانځه د عامو تېروتنو لپاره صحیح اسلامي لارښوونه وړاندې کوي. هره پریکړه د کلاسیک اسلامي فقهې څخه اخیستل شوې.",
+                disclaimer: "دا احکام د رښتیني سني فقهې پر اصولو بنا دي. د پیچلو حالاتو یا شخصي شرایطو لپاره، مهرباني وکړئ د یوه وړ عالم سره اړیکه ونیسئ.",
+                termsTitle: "مهم اسلامي اصطلاحات",
+                
+                // Terms
+                term1Name: "سجده سهو",
+                term1Meaning: "د لمانځه د تېروتنو د سمولو لپاره کیدونکې سجده",
+                term2Name: "ثنا",
+                term2Meaning: "د تکبیر تحریمې وروسته لوستل کیدونکی پیل دعا",
+                term3Name: "فاتحه",
+                term3Meaning: "د قرآن لومړی برخه چې په هر رکعت کې لوستل کیږي",
+                term4Name: "رکوع",
+                term4Meaning: "د زنګونونو پر لاسونه د کېښودلو سره د ځړولو حالت",
+                term5Name: "سجده",
+                term5Meaning: "د ځمکې سره د تندي د لګولو سجده",
+                term6Name: "تشهد",
+                term6Meaning: "د کښینولو په حال کې لوستل کیدونکی دعا چې د کلمې شهادت پکې شامل دی",
+                
+                // Ruling Labels
+                rulingLabel: "حکم:",
+                actionLabel: "مطلوب عمل:",
+                
+                // Modal  
+                modalTitle: "د سجده سهو طریقه",
+                step1: "د لمانځه د بشپړولو وروسته کښینول پاتې شئ او 'الله اکبر' ووایاست",
+                step2: "سجده ته لاړ شئ او 'سبحان ربي الاعلیٰ' درې ځله ولولئ",
+                step3: "'الله اکبر' ویلو سره کښینئ",
+                step4: "'الله اکبر' ویلو سره بیا سجده ته لاړ شئ او 'سبحان ربي الاعلیٰ' درې ځله ولولئ",
+                step5: "کښینئ او بشپړ تشهد او درود ولولئ",
+                step6: "دواړو خواوو ته د سلام سره بشپړ کړئ",
+                sajdaNote: "یادونه: طریقه کولی شي په مختلفو مذهبونو کې لږ توپیر ولري. دا د عمومي حنفي طریقه ده."
+            }
+        };
+
+        // Ruling Data
+        const rulings = {
+            hanafi: {
+                sana: {
+                    en: {
+                        ruling: "Forgetting Sana (opening supplication) is Makruh (disliked) but does not invalidate the prayer.",
+                        action: "No action required. The prayer is valid. However, it's recommended to always recite Sana."
+                    },
+                    ur: {
+                        ruling: "ثنا بھولنا مکروہ ہے لیکن نماز باطل نہیں ہوتی۔",
+                        action: "کوئی کارروائی کی ضرورت نہیں۔ نماز درست ہے۔ تاہم ہمیشہ ثنا پڑھنا مستحب ہے۔"
+                    },
+                    ar: {
+                        ruling: "نسيان الثناء مكروه لكنه لا يبطل الصلاة.",
+                        action: "لا حاجة لأي عمل. الصلاة صحيحة. لكن يستحب قراءة الثناء دائماً."
+                    },
+                    ps: {
+                        ruling: "د ثنا هېرول مکروه دي مګر لمونځ باطل نه کیږي.",
+                        action: "هیڅ کارروائۍ ته اړتیا نشته. لمونځ سم دی. مګر هميشه د ثنا لوستل مستحب دي."
+                    }
+                },
+                surah: {
+                    en: {
+                        ruling: "Forgetting to recite Surah after Fatiha in first two rakats requires Sajda Sahw.",
+                        action: "Complete your prayer normally and perform Sajda Sahw before Salam."
+                    },
+                    ur: {
+                        ruling: "پہلی دو رکعتوں میں فاتحہ کے بعد سورہ بھولنے سے سجدہ سہو واجب ہے۔",
+                        action: "نماز عام طور پر مکمل کریں اور سلام سے پہلے سجدہ سہو کریں۔"
+                    },
+                    ar: {
+                        ruling: "نسيان قراءة السورة بعد الفاتحة في أول ركعتين يوجب سجدة السهو.",
+                        action: "أكمل صلاتك عادياً وأد سجدة السهو قبل السلام."
+                    },
+                    ps: {
+                        ruling: "په لومړیو دوو رکعتونو کې د فاتحې وروسته د سورت هېرول د سجده سهو موجبه دي.",
+                        action: "خپل لمونځ په عادي ډول بشپړ کړئ او د سلام څخه مخکې سجده سهو وکړئ."
+                    }
+                },
+                fatiha: {
+                    en: {
+                        ruling: "Forgetting Fatiha in any rakat invalidates the prayer as Fatiha is Fard (obligatory).",
+                        action: "You must repeat the entire prayer from the beginning."
+                    },
+                    ur: {
+                        ruling: "کسی بھی رکعت میں فاتحہ بھولنا نماز کو باطل کر دیتا ہے کیونکہ فاتحہ فرض ہے۔",
+                        action: "آپ کو پوری نماز شروع سے دوبارہ پڑھنی ہوگی۔"
+                    },
+                    ar: {
+                        ruling: "نسيان الفاتحة في أي ركعة يبطل الصلاة لأن الفاتحة فرض.",
+                        action: "يجب إعادة الصلاة كاملة من البداية."
+                    },
+                    ps: {
+                        ruling: "په کوم رکعت کې د فاتحې هېرول لمونځ باطل کوي ځکه چې فاتحه فرض ده.",
+                        action: "تاسو باید ټول لمونځ د پیل څخه بیا ولولئ."
+                    }
+                },
+                tashahhud: {
+                    en: {
+                        ruling: "Forgetting the first Tashahhud is Wajib (necessary) and requires Sajda Sahw.",
+                        action: "Complete your prayer and perform Sajda Sahw before Salam."
+                    },
+                    ur: {
+                        ruling: "پہلا تشہد بھولنا واجب ہے اور سجدہ سہو ضروری ہے۔",
+                        action: "نماز مکمل کریں اور سلام سے پہلے سجدہ سہو کریں۔"
+                    },
+                    ar: {
+                        ruling: "نسيان التشهد الأول واجب ويتطلب سجدة السهو.",
+                        action: "أكمل الصلاة وأد سجدة السهو قبل السلام."
+                    },
+                    ps: {
+                        ruling: "د لومړي تشهد هېرول واجب ده او د سجده سهو ضرورت لري.",
+                        action: "لمونځ بشپړ کړئ او د سلام څخه مخکې سجده سهو وکړئ."
+                    }
+                },
+                ruku: {
+                    en: {
+                        ruling: "Forgetting Ruku completely invalidates the prayer as it's a Rukn (pillar) of prayer.",
+                        action: "You must repeat the entire prayer from the beginning."
+                    },
+                    ur: {
+                        ruling: "رکوع بالکل بھولنا نماز کو باطل کر دیتا ہے کیونکہ یہ نماز کا رکن ہے۔",
+                        action: "آپ کو پوری نماز شروع سے دوبارہ پڑھنی ہوگی۔"
+                    },
+                    ar: {
+                        ruling: "نسيان الركوع تماماً يبطل الصلاة لأنه ركن من أركان الصلاة.",
+                        action: "يجب إعادة الصلاة كاملة من البداية."
+                    },
+                    ps: {
+                        ruling: "د رکوع بالکل هېرول لمونځ باطل کوي ځکه چې دا د لمانځه رکن دی.",
+                        action: "تاسو باید ټول لمونځ د پیل څخه بیا ولولئ."
+                    }
+                },
+                sujood: {
+                    en: {
+                        ruling: "Forgetting one Sujood invalidates the prayer as both Sujood are Fard (obligatory).",
+                        action: "You must repeat the entire prayer from the beginning."
+                    },
+                    ur: {
+                        ruling: "ایک سجدہ بھولنا نماز کو باطل کر دیتا ہے کیونکہ دونوں سجدے فرض ہیں۔",
+                        action: "آپ کو پوری نماز شروع سے دوبارہ پڑھنی ہوگی۔"
+                    },
+                    ar: {
+                        ruling: "نسيان سجدة واحدة يبطل الصلاة لأن كلا السجدتين فرض.",
+                        action: "يجب إعادة الصلاة كاملة من البداية."
+                    },
+                    ps: {
+                        ruling: "د یوې سجدې هېرول لمونځ باطل کوي ځکه چې دواړه سجدې فرض دي.",
+                        action: "تاسو باید ټول لمونځ د پیل څخه بیا ولولئ."
+                    }
+                },
+                standing: {
+                    en: {
+                        ruling: "Forgetting to stand after Ruku is missing a Wajib action and requires Sajda Sahw.",
+                        action: "Complete your prayer and perform Sajda Sahw before Salam."
+                    },
+                    ur: {
+                        ruling: "رکوع کے بعد کھڑے ہونا بھولنا واجب عمل کا چھوٹنا ہے اور سجدہ سہو ضروری ہے۔",
+                        action: "نماز مکمل کریں اور سلام سے پہلے سجدہ سہو کریں۔"
+                    },
+                    ar: {
+                        ruling: "نسيان الوقوف بعد الركوع هو فوت عمل واجب ويتطلب سجدة السهو.",
+                        action: "أكمل الصلاة وأد سجدة السهو قبل السلام."
+                    },
+                    ps: {
+                        ruling: "د رکوع وروسته د ودرېدلو هېرول د واجب عمل پرېښودل دي او د سجده سهو ضرورت لري.",
+                        action: "لمونځ بشپړ کړئ او د سلام څخه مخکې سجده سهو وکړئ."
+                    }
+                },
+                wrong_order: {
+                    en: {
+                        ruling: "Performing prayer actions in wrong order disrupts the proper sequence and may invalidate prayer.",
+                        action: "Generally requires repeating the prayer. Consult a scholar for specific cases."
+                    },
+                    ur: {
+                        ruling: "نماز کے اعمال غلط ترتیب میں کرنا صحیح تسلسل خراب کرتا ہے اور نماز باطل ہو سکتی ہے۔",
+                        action: "عام طور پر نماز دوبارہ پڑھنا ضروری ہے۔ مخصوص صورتوں کے لیے عالم سے رجوع کریں۔"
+                    },
+                    ar: {
+                        ruling: "أداء أعمال الصلاة بترتيب خاطئ يخل بالتسلسل الصحيح وقد يبطل الصلاة.",
+                        action: "عموماً يتطلب إعادة الصلاة. استشر عالماً للحالات المحددة."
+                    },
+                    ps: {
+                        ruling: "د لمانځه د اعمالو په غلط ترتیب سره کول سمه تسلسل خرابوي او کولی شي لمونځ باطل کړي.",
+                        action: "په عمومي توګه د لمانځه بیا لوستل ضروري دي. د ځانګړو قضیو لپاره له عالم سره مشوره وکړئ."
+                    }
+                },
+                extra_rakat: {
+                    en: {
+                        ruling: "Praying an extra rakat by mistake requires Sajda Sahw to correct the error.",
+                        action: "Complete the prayer with correct number of rakats and perform Sajda Sahw before Salam."
+                    },
+                    ur: {
+                        ruling: "غلطی سے اضافی رکعت پڑھنے سے غلطی کو درست کرنے کے لیے سجدہ سہو ضروری ہے۔",
+                        action: "صحیح تعداد میں رکعات کے ساتھ نماز مکمل کریں اور سلام سے پہلے سجدہ سہو کریں۔"
+                    },
+                    ar: {
+                        ruling: "الصلاة بركعة زائدة خطأً يتطلب سجدة السهو لتصحيح الخطأ.",
+                        action: "أكمل الصلاة بالعدد الصحيح من الركعات وأد سجدة السهو قبل السلام."
+                    },
+                    ps: {
+                        ruling: "په تېروتنه سره د زیات رکعت لوستل د تېروتنې د سمولو لپاره د سجده سهو ضرورت لري.",
+                        action: "د سمو رکعتونو په شمېر سره لمونځ بشپړ کړئ او د سلام څخه مخکې سجده سهو وکړئ."
+                    }
+                },
+                wrong_qibla: {
+                    en: {
+                        ruling: "If you realized the mistake during prayer and correct direction is known, turn towards Qibla and continue.",
+                        action: "If realized after prayer and the error was significant, repeat the prayer towards correct Qibla."
+                    },
+                    ur: {
+                        ruling: "اگر نماز کے دوران غلطی کا احساس ہو اور صحیح سمت معلوم ہو تو قبلے کی طرف مڑ جائیں اور جاری رکھیں۔",
+                        action: "اگر نماز کے بعد احساس ہو اور غلطی نمایاں تھی تو صحیح قبلے کی طرف نماز دوبارہ پڑھیں۔"
+                    },
+                    ar: {
+                        ruling: "إذا أدركت الخطأ أثناء الصلاة وعرفت الاتجاه الصحيح، فتوجه نحو القبلة واستمر.",
+                        action: "إذا أدركت بعد الصلاة وكان الخطأ كبيراً، فأعد الصلاة نحو القبلة الصحيحة."
+                    },
+                    ps: {
+                        ruling: "که ستاسو د لمانځه پر مهال د تېروتنې احساس شو او سم لور معلوم وي، د قبلې خوا ته واوړئ او دوام ورکړئ.",
+                        action: "که د لمانځه وروسته احساس شو او تېروتنه د پام وړ وه، د سمې قبلې خوا ته لمونځ بیا ولولئ."
+                    }
+                }
+            }
+            // Similar structure would be added for other madhabs (shafi, maliki, hanbali)
+        };
+
+        // Functions
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update switcher buttons
+            document.querySelectorAll('.top-switcher-bar .switcher-btn').forEach(btn => {
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes('setLanguage')) {
+                    btn.classList.remove('active');
+                }
+            });
+            document.querySelector(`[onclick="setLanguage('${lang}')"]`).classList.add('active');
+            
+            // Apply language-specific styles
+            document.body.className = lang === 'ur' ? 'urdu' : '';
+            if (lang === 'ur' || lang === 'ar' || lang === 'ps') {
+                document.body.classList.add('rtl');
+            } else {
+                document.body.classList.remove('rtl');
+            }
+            
+            updateTexts();
+        }
+
+        function setMadhab(madhab) {
+            currentMadhab = madhab;
+            
+            // Update switcher buttons
+            document.querySelectorAll('.top-switcher-bar .switcher-btn').forEach(btn => {
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes('setMadhab')) {
+                    btn.classList.remove('active');
+                }
+            });
+            document.querySelector(`[onclick="setMadhab('${madhab}')"]`).classList.add('active');
+            
+            updateMadhabBadge();
+        }
+
+        function updateTexts() {
+            const texts = translations[currentLanguage];
+            
+            Object.keys(texts).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = texts[key];
+                }
+            });
+        }
+
+        function updateMadhabBadge() {
+            const madhabs = {
+                hanafi: { en: 'Hanafi Madhab', ur: 'حنفی مذہب', ar: 'المذهب الحنفي', ps: 'حنفي مذهب' },
+                shafi: { en: 'Shafi Madhab', ur: 'شافعی مذہب', ar: 'المذهب الشافعي', ps: 'شافعي مذهب' },
+                maliki: { en: 'Maliki Madhab', ur: 'مالکی مذہب', ar: 'المذهب المالكي', ps: 'مالکي مذهب' },
+                hanbali: { en: 'Hanbali Madhab', ur: 'حنبلی مذہب', ar: 'المذهب الحنبلي', ps: 'حنبلي مذهب' }
+            };
+            
+            const badge = document.getElementById('rulingMadhab');
+            if (badge && madhabs[currentMadhab]) {
+                badge.textContent = madhabs[currentMadhab][currentLanguage];
+            }
+        }
+
+        function showSection(sectionId) {
+            // Store previous section for back navigation
+            const currentActive = document.querySelector('.section.active');
+            if (currentActive && currentActive.id !== sectionId) {
+                previousSection = currentActive.id;
+            }
+            
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show target section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showRuling(mistakeType) {
+            const ruling = rulings[currentMadhab] && rulings[currentMadhab][mistakeType];
+            
+            if (ruling && ruling[currentLanguage]) {
+                // Update question
+                const questionElement = document.querySelector(`#${mistakeType}Q`);
+                if (questionElement) {
+                    document.getElementById('rulingQuestion').textContent = questionElement.textContent;
+                }
+                
+                // Update Arabic text
+                const arabicElement = document.querySelector(`#${mistakeType}A`);
+                if (arabicElement) {
+                    document.getElementById('rulingArabic').textContent = arabicElement.textContent;
+                }
+                
+                // Update ruling and action
+                document.getElementById('rulingText').textContent = ruling[currentLanguage].ruling;
+                document.getElementById('actionText').textContent = ruling[currentLanguage].action;
+                
+                updateMadhabBadge();
+                showSection('ruling');
+            }
+        }
+
+        function goBack() {
+            showSection(previousSection || 'home');
+        }
+
+        function showSajdaSahw() {
+            document.getElementById('sajdaModal').classList.add('show');
+        }
+
+        function closeSajdaModal() {
+            document.getElementById('sajdaModal').classList.remove('show');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('sajdaModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSajdaModal();
+            }
+        });
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTexts();
+            updateMadhabBadge();
+        });
+    </script>
+</body>
+</html>
